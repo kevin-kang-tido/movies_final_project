@@ -1,0 +1,78 @@
+
+.popular_movie_full h1{
+    left:0;
+    font-family:Arial, sans-serif ;
+    font-weight: 800;
+    color: #FCFCFC ;
+}
+.info_part{
+    float: left;
+    width: 29%;
+    height: 1200px;
+    /* height: auto; */
+    font-family:Arial, sans-serif ;
+}
+.accordion_style{
+    border-radius: 10% !important;
+    /* box-shadow:2px 2px 2px rgb(213, 205, 205); */
+}
+.movie_part{
+    float: right;
+    width: 69%;
+    /* height: auto; */
+    /* height: 1200px; */
+    padding-bottom: 100px;
+}
+.dropdown_css{
+    width: 100%;
+}
+.dropdown_css:hover{
+    color:#FCFCFC !important;
+    background-color: #D11D20;
+    transform: 0.5s;
+    font-weight: 200;
+    border: none;
+    
+}
+.dropdown_css_2{
+    width: 90%;
+}
+
+
+
+.btn_titile h6{
+    font-size: 20px;
+    color:  #4E4D55;
+    font-weight: 800;
+    margin-left: 0;
+}
+.btn_titile button{
+    margin: 5px;
+    border-radius: 30px;
+}
+.btn_titile button:hover{
+    color:#FCFCFC !important;
+    background-color: #D11D20;
+    transform: 0.5s;
+    font-weight: 200;
+
+}
+.btn_search{
+    font-family:Arial, sans-serif ;
+    font-weight: 700;
+    width: 97%;
+    margin: 5px;
+    border-radius: 30px;
+    padding: 10px;
+    background-color: #D11D20;
+    border: none;
+    /* box-shadow:1px 1px rgb(213, 205, 205); */
+
+}
+.btn_search:hover{
+    border: none;
+    transform: 0.4s;
+    background-color: #8f080b;
+
+}
+

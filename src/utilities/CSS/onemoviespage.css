@@ -1,0 +1,126 @@
+
+
+body{
+    font-family:Arial, sans-serif ;
+}
+.part_card{
+    float: left;
+    width: 30%;
+    height: 90vh;
+    /* background-color: #630808; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.part_infor{
+    float: right;
+    width: 70%;
+    height: 90vh;
+    /* background-color: #140343; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.div_img{
+    width: 90%;
+    height: 90%;
+}
+.div_img img{
+    width: 100%;
+    height: 100%;
+    background: no-repeat scroll center scroll;
+    -webkit-background-side: cover ;
+    background-size: cover;
+    border-radius: 10px;
+}
+.div_info{
+    width: 90%;
+    height: 90%;
+}
+.div_info h1{
+    color: #FCFCFC;
+    font-weight: 800;
+
+}
+.under_title span{
+    font-family:Arial, sans-serif ;
+    font-size: 16px;
+    color: #FCFCFC;
+
+}
+.under_title span a{
+    margin: 4px;
+    text-decoration: none;
+    color: #FCFCFC;
+}
+.under_title span a:hover{
+    color:#4E4D55;
+    transform: 0.4s;
+}
+.icon_part{
+    width: 100%;
+    height: 60px;
+    /* background-color: #fff; */
+}
+.iconn{
+    width: 60px;
+    height: 60px;
+    background-color: #D11D20; 
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+}
+.iconn:hover{
+    background-color: #9f1417; 
+    border: 1px 2px #D8CC42;
+
+}
+.iconn i{
+    font-size: 16px;
+    color: #FCFCFC;
+}
+.iconn_play{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    color: #FCFCFC;
+    margin-top: -12px;
+}
+.iconn_play i{
+    font-size: 30px;
+}
+.iconn_play a{
+    margin-top: 12px;
+    text-decoration: none;
+    font-size: 16px;
+    color:#FCFCFC;
+    font-weight: 600;
+    font-family:Arial, sans-serif ;
+
+}
+.iconn_play a:hover{
+    color: #4E4D55;
+    transform: 0.4s;
+}
+.key_title{
+    font-size: 16px;
+    color: #5a586b;
+    font-size: 16px;
+    font-family: Arial, sans-serif ;
+}
+.overview{
+    color:#FCFCFC ;
+    font-weight: 400;
+    float: left;
+    font-family: Arial, sans-serif ;
+}
+
+.actor_part h2{
+    font-weight: 500;
+    font-family: Arial, sans-serif ;
+
+}
