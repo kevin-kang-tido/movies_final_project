@@ -5,6 +5,7 @@ const initialState = {
     categories: [],
     populars:[],
     tvshows:[],
+    ontvs  :[],
     isLoading: true, 
 }
 export const productReducer = (state = initialState, action) => {
@@ -15,13 +16,15 @@ export const productReducer = (state = initialState, action) => {
         return{ ...state, products: payload, isLoading: false}
         // statement popular moves
         case actionTypes.FETCH_POPULAR: 
-        return{ ...state, populars: payload}
-        // statement tv shwo popular moves
+        return{ ...state, populars: payload, isLoading: false}
+        // statement tv show popular 
         case actionTypes.FETCH_PTVSHOW: 
-        return{ ...state, tvshows: payload}
+        return{ ...state, tvshows: payload, isLoading: false}
+        // statement on tv show
+        case actionTypes.FETCH_ONTV: 
+        return{ ...state, ontvs: payload, isLoading: false}
 
-        case actionTypes.FETCH_CATEGOIES:
-        return{...state, categories: payload}
+
         default:
             return state
     }

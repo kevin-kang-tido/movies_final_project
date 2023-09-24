@@ -2,9 +2,9 @@ import { base_URL } from "../../utilities/constant"
 import { actionTypes } from "./actionTypes"
 
 // movies listing
-export const fetch_all_products = () =>{
+export const fetch_all_products = (pageNow) =>{
     return (dispatch) => {
-        fetch(`${base_URL}popular?api_key=4113f3ad734e747a5b463cde8c55de42&language=en- US&page=1`)
+        fetch(`${base_URL}popular?api_key=4113f3ad734e747a5b463cde8c55de42&language=en- US&page=${pageNow}`)
         .then(res => res.json())
         .then(resp => dispatch({
             type: actionTypes.FETCH_PRDOUCTS,
@@ -15,9 +15,9 @@ export const fetch_all_products = () =>{
 }
 // api popular moveis
 // api now playing
-export const popular_movies = () =>{
+export const popular_movies = (pageNow) =>{
     return (dispatch) => {
-        fetch(`${base_URL}now_playing?api_key=4113f3ad734e747a5b463cde8c55de42&language=en-US&page=2`)
+        fetch(`${base_URL}now_playing?api_key=4113f3ad734e747a5b463cde8c55de42&language=en-US&page=${pageNow}`)
         .then(res => res.json())
         .then(resp => dispatch({
             type: actionTypes.FETCH_POPULAR,
@@ -39,17 +39,20 @@ export const all_tv_popular = (pageNow) =>{
         .catch(er => console.log(' Catch tv show  error: ', er))
     }
 }
-// export const all_tv_popular = (typeofMovies,Pagenow) =>{
-//     return (dispatch) => {
-//         fetch(`${base_URL}/${typeofMovies}?api_key=4113f3ad734e747a5b463cde8c55de42&language=en-US&page=${Pagenow}`)
-//         .then(res => res.json())
-//         .then(resp => dispatch({
-//             type: actionTypes.FETCH_PTVSHOW,
-//             payload: resp
-//         }))
-//         .catch(er => console.log(' Catch tv show  error: ', er))
-//     }
-// }
+
+// ontv
+export const all_on_tv = (pageNow) =>{
+    return (dispatch) => {
+        fetch(`https://api.themoviedb.org/3/person/popular?api_key=4113f3ad734e747a5b463cde8c55de42&language=en- US&page=${pageNow}`)
+        .then(res => res.json())
+        .then(resp => dispatch({
+            type: actionTypes.FETCH_PTVSHOW,
+            payload: resp
+        }))
+        .catch(er => console.log(' Catch tv show  error: ', er))
+    }
+}
+
 
 
 

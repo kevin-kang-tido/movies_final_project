@@ -13,6 +13,9 @@ import Popularmovies from './pages/Popularmovies';
 import Nowplaying from './pages/Nowplaying';
 import PopularTVshow from './pages/PopularTVshow';
 import Upcomingmovies from './pages/Upcomingmovies';
+import Toprated from './pages/Toprated';
+import Airingtoday from './pages/Airingtoday';
+import Ontv from './pages/Ontv';
 
 
 function App() {
@@ -30,8 +33,13 @@ function App() {
           <Route path='/popularmovies' element={<Popularmovies/>}/>
           <Route path='/nowplaying'    element={<Nowplaying/>}/>
           <Route path='/upcoming'      element={<Upcomingmovies/>}/>
+          <Route path='/toprated'      element={<Toprated/>}/>
           {/* papges popular movies */}
+          {/* tv movies part */}
           <Route path='/populartv'     element={<PopularTVshow/>}/>
+          <Route path='/airingtoday'   element={<Airingtoday/>} />
+          <Route path='/ontv'          element={<Ontv/>}/>
+          {/* tv movies part */}
 
           <Route path='/*' element={<NotFound/>}/>
           

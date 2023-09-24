@@ -7,5 +7,6 @@ export const actionTypes = {
     FETCH_PROFILE :"profile",
     FETCH_POPULAR : "popular_movies",
     FETCH_ACTOR   : "all_actor_movies",
-    FETCH_PTVSHOW :"all_tv_popular"
+    FETCH_PTVSHOW :"all_tv_popular",
+    FETCH_ONTV    :"all_on_tv"
 }

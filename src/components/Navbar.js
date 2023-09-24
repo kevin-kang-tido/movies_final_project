@@ -32,7 +32,7 @@ export default function Navbar() {
             <li><NavLink className="dropdown-item" to="/popularmovies">Popular</NavLink></li>
             <li><NavLink className="dropdown-item" to="/nowplaying">Now Playing</NavLink></li>
             <li><NavLink className="dropdown-item" to="/upcoming">Upcoming</NavLink></li>
-            <li><a className="dropdown-item" href="#">Top Rated</a></li>
+            <li><NavLink className="dropdown-item" to="/toprated">Top Rated</NavLink></li>
           </ul>
         </li>
         <li className="nav-item dropdown">
@@ -41,9 +41,9 @@ export default function Navbar() {
           </a>
           <ul className="dropdown-menu">
             <li><NavLink className="dropdown-item" to="/populartv">Popular</NavLink></li>
-            <li><a className="dropdown-item" href="#">Airing Today</a></li>
-            <li><a className="dropdown-item" href="#">On TV</a></li>
-            <li><a className="dropdown-item" href="#">Top Rated</a></li>
+            <li><NavLink className="dropdown-item" to="/airingtoday">Airing Today</NavLink></li>
+            <li><NavLink className="dropdown-item" to="/ontv">On TV</NavLink></li>
+            <li><NavLink className="dropdown-item" to="/toprated">Top Rated</NavLink></li>
           </ul>
         </li>
         <li className="nav-item dropdown">

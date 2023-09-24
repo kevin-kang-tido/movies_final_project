@@ -1,37 +1,37 @@
 import React, { useEffect, useState } from 'react'
 import '../utilities/CSS/popularpage.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { popular_movies } from '../redux/actions/productAction'
+import { all_tv_popular } from '../redux/actions/productAction'
 import { Link } from 'react-router-dom'
 import Cards from '../components/Cards'
+import { Base_http } from '../utilities/Base_http'
 import Infopart from '../components/Infopart'
 import LoadingView from '../components/LoadingView'
-import { Base_http } from '../utilities/Base_http'
 
 
-export default function Nowplaying() {
+export default function Airingtoday() {
 
     const dispatch = useDispatch()
-    const {populars} = useSelector(state  => state.prodReducer)
+    const {tvshows} = useSelector(state  => state.prodReducer)
     const {isLoading} = useSelector(state => state.prodReducer)
     const [movies, setMovies] = useState([])
     const [totalPage, setTotalPage] = useState(0)
-    const [pageNow, setPageNow] = useState(1)
+    const [pageNow, setPageNow] = useState(14)
   
 
 
     useEffect(() => {
-        setTotalPage(populars.total_pages)
-        if(pageNow === 1)
-        setMovies(populars.results)
+        setTotalPage(tvshows.total_pages)
+        if(pageNow === 14)
+        setMovies(tvshows.results)
         else
-        setMovies([...movies, ...populars.results])
+        setMovies([...movies, ...tvshows.results])
         
         
-    },[populars])
+    },[tvshows])
 
     useEffect(()=>{
-        dispatch(popular_movies(pageNow))
+        dispatch(all_tv_popular(pageNow))
     },[pageNow])
 
     
@@ -44,12 +44,11 @@ export default function Nowplaying() {
     }
     }
 
-
   return (
     <section className=''>
       <div className='container w-100 popular_movie_full'>
-       <h1 className='mb-2'>Now Playing Movies</h1>
-       {/* part information */}
+       <h1 className='mb-2'>TV Shows Airing Today</h1>
+       {/* information part */}
        <Infopart/>
 
         
@@ -57,7 +56,7 @@ export default function Nowplaying() {
         {/* part right */}
         <div className='movie_part mx-1'>
         <div className='row g-3'>
-            {    
+            {     
                 isLoading ?
                 <>
                 <div className='col-12 col-md-4 col-lg-3'>
@@ -72,8 +71,9 @@ export default function Nowplaying() {
                 <div className='col-12 col-md-4 col-lg-3'>
                     <LoadingView/>
                 </div>
-                </>              
-            : movies?.map((product) => (
+                </>   
+
+            :movies?.map((product) => (
                         <div
                             className='col-12 col-md-4 col-lg-3'
                             key={product.id}
@@ -89,10 +89,11 @@ export default function Nowplaying() {
                 ))           
             }
            </div>
-           <button 
-           type="button" class="btn btn-danger w-100"
-           onClick={handlechange}
-           >Load More</button>
+           <button
+            type="button" 
+            class="btn btn-danger w-100"
+            onClick={handlechange}
+            >Load More</button>
         </div>
     </div>
     </section>
