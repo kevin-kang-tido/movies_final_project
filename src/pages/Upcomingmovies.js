@@ -1,32 +1,50 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../utilities/CSS/popularpage.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { all_tv_popular, fetch_all_products, popular_movies } from '../redux/actions/productAction'
 import { Link } from 'react-router-dom'
 import Cards from '../components/Cards'
+import LoadingView from '../components/LoadingView'
 import { Base_http } from '../utilities/Base_http'
 
 
-export default function PopularTVshow() {
+export default function Upcomingmovies() {
 
     const dispatch = useDispatch()
-    const {products}=useSelector(state => state.prodReducer)
-    const {populars}= useSelector(state => state.prodReducer)
     const {tvshows} = useSelector(state  => state.prodReducer)
+    const [movies, setMovies] = useState(tvshows.results)
+    // const {isLoadingg} = useSelector(state => state.actReducer)
+    const isLoading = false; 
+    // const {pageNow}   = useSelector(state => state.prodReducer)
+    const [pageNow, setPageNow]= useState(1)
 
-    console.log("Show me the Products: ", products)
-    // typeofMovi,Pagenow
 
     useEffect(() => {
-        dispatch(fetch_all_products())
-        dispatch(popular_movies())
-        dispatch(all_tv_popular())
-    })
 
+        dispatch(all_tv_popular(pageNow))
+        
+        
+    },[pageNow])
+
+    useEffect(()=>{
+        dispatch(all_tv_popular(1))
+    },[])
+
+    
+   
+  const handlechange = () =>{
+        // tvshows[...tvshows,pageNow]
+        setPageNow(pageNow+1)
+        setMovies(prev => [...prev, ...tvshows.results])
+    }
+
+   
+
+      
   return (
     <section className=''>
       <div className='container w-100 popular_movie_full'>
-       <h1 className='mb-2'>Popular TV Show Movies</h1>
+       <h1 className='mb-2'>Upcoming Movies</h1>
         <div className='info_part mx-1'>
             <div className=''>
                 <div class="accordion accordion_style" id="accordionFlushExample">
@@ -142,12 +160,26 @@ export default function PopularTVshow() {
 
         </div>
         
-
         {/* part right */}
         <div className='movie_part mx-1'>
         <div className='row g-3'>
-            {               
-            tvshows?.results?.map((product) => (
+            {  
+              isLoading ?
+                <>
+                <div className='col-12 col-md-4 col-lg-3'>
+                    <LoadingView/>
+                </div>
+                <div className='col-12 col-md-4 col-lg-3'>
+                    <LoadingView/>
+                </div>
+                <div className='col-12 col-md-4 col-lg-3'>
+                    <LoadingView/>
+                </div>
+                <div className='col-12 col-md-4 col-lg-3'>
+                    <LoadingView/>
+                </div>
+            </>            
+            :movies?.map((product) => (
                         <div
                             className='col-12 col-md-4 col-lg-3'
                             key={product.id}
@@ -163,7 +195,11 @@ export default function PopularTVshow() {
                 ))           
             }
            </div>
-           <button type="button" class="btn btn-danger w-100">Load More</button>
+           <button 
+           type="button" class="btn btn-danger w-100"
+           onClick={handlechange}
+
+           >Load More</button>
         </div>
     </div>
     </section>

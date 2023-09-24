@@ -12,6 +12,7 @@ import Login from './pages/Login';
 import Popularmovies from './pages/Popularmovies';
 import Nowplaying from './pages/Nowplaying';
 import PopularTVshow from './pages/PopularTVshow';
+import Upcomingmovies from './pages/Upcomingmovies';
 
 
 function App() {
@@ -25,11 +26,12 @@ function App() {
          
           <Route path='/onemovies' element={<Onemoviepages/>}/>
           <Route path='/popularpeople' element={<Popularpeople/>}/>
+          {/* papges popular movies */}
           <Route path='/popularmovies' element={<Popularmovies/>}/>
           <Route path='/nowplaying'    element={<Nowplaying/>}/>
+          <Route path='/upcoming'      element={<Upcomingmovies/>}/>
+          {/* papges popular movies */}
           <Route path='/populartv'     element={<PopularTVshow/>}/>
-
-
 
           <Route path='/*' element={<NotFound/>}/>
           

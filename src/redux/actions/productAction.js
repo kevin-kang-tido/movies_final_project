@@ -27,9 +27,10 @@ export const popular_movies = () =>{
     }
 }
 
-export const all_tv_popular = () =>{
+// testing upcoming part
+export const all_tv_popular = (pageNow) =>{
     return (dispatch) => {
-        fetch(`${base_URL}now_playing?api_key=4113f3ad734e747a5b463cde8c55de42&language=en-US&page=2`)
+        fetch(`${base_URL}popular?api_key=4113f3ad734e747a5b463cde8c55de42&language=en-US&page=${pageNow}`)
         .then(res => res.json())
         .then(resp => dispatch({
             type: actionTypes.FETCH_PTVSHOW,
@@ -38,18 +39,19 @@ export const all_tv_popular = () =>{
         .catch(er => console.log(' Catch tv show  error: ', er))
     }
 }
+// export const all_tv_popular = (typeofMovies,Pagenow) =>{
+//     return (dispatch) => {
+//         fetch(`${base_URL}/${typeofMovies}?api_key=4113f3ad734e747a5b463cde8c55de42&language=en-US&page=${Pagenow}`)
+//         .then(res => res.json())
+//         .then(resp => dispatch({
+//             type: actionTypes.FETCH_PTVSHOW,
+//             payload: resp
+//         }))
+//         .catch(er => console.log(' Catch tv show  error: ', er))
+//     }
+// }
 
 
 
-// arrow funtion () => {......}
-export const fetchAllCategories = () => {
-    return (dispatch) =>{
-        fetch(`${base_URL}categories`)
-        .then(resp => resp.json())
-        .then(resp => dispatch({
-            type: actionTypes.FETCH_CATEGOIES,
-            payload: resp
-        }))
-        .catch(er => console.log("failed to fetch:",er))
-    }
-}
+
+

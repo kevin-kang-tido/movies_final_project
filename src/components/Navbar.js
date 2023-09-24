@@ -31,7 +31,7 @@ export default function Navbar() {
           <ul className="dropdown-menu">
             <li><NavLink className="dropdown-item" to="/popularmovies">Popular</NavLink></li>
             <li><NavLink className="dropdown-item" to="/nowplaying">Now Playing</NavLink></li>
-            <li><a className="dropdown-item" href="#">Upcoming</a></li>
+            <li><NavLink className="dropdown-item" to="/upcoming">Upcoming</NavLink></li>
             <li><a className="dropdown-item" href="#">Top Rated</a></li>
           </ul>
         </li>
