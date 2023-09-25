@@ -2,11 +2,12 @@
 import Carousel from '../components/Carousel'
 import Cards from '../components/Cards'
 import '../utilities/CSS/navbar.css'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector} from 'react-redux'
 import { Link } from 'react-router-dom';
 import { fetch_all_products, popular_movies } from '../redux/actions/productAction';
 import LoadingView from '../components/LoadingView';
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import { Base_http } from '../utilities/Base_http'
 
 // state managements times
 
@@ -16,6 +17,7 @@ export default function Home() {
       const {isLoading} = useSelector(state => state.prodReducer)
       const {products}= useSelector(state => state.prodReducer)
       const {populars}= useSelector(state => state.prodReducer)
+      const [pageNow, setPageNow] = useState(2)
 
      
       console.log("Here is the product : ", products)
@@ -24,7 +26,7 @@ export default function Home() {
       useEffect(() => {
 
          dispatch(fetch_all_products())
-         dispatch(popular_movies())
+         dispatch(popular_movies(pageNow))
 
       }, [])
 
@@ -68,9 +70,9 @@ export default function Home() {
                            className='col-12 col-md-4 col-lg-2'
                            key={product.id}
                          >
-                           <Link to={`/onemovies/${product.id}`} className='text-decoration-none'>
+                           <Link to={`/onemovies`} className='text-decoration-none'>
                                <Cards
-                                movieIMG={`https://image.tmdb.org/t/p/w500${product.poster_path}`}
+                                movieIMG={`${Base_http}${product.poster_path}`}
                                 moviename={product.title}
                                 movieDate={product.release_date}
                                />
@@ -93,7 +95,7 @@ export default function Home() {
                          >
                            <Link to={`/onemovies/${product.id}`} className='text-decoration-none'>
                                <Cards
-                                movieIMG={`https://image.tmdb.org/t/p/w500${product.poster_path}`}
+                                movieIMG={`${Base_http}${product.poster_path}`}
                                 moviename={product.title}
                                 movieDate={product.release_date}
                                />
@@ -115,7 +117,7 @@ export default function Home() {
                          >
                            <Link to={`/onemovies/${product.id}`} className='text-decoration-none'>
                                <Cards
-                                movieIMG={`https://image.tmdb.org/t/p/w500${product.poster_path}`}
+                                movieIMG={`${Base_http}${product.poster_path}`}
                                 moviename={product.title}
                                 movieDate={product.release_date}
                                />
@@ -201,7 +203,7 @@ export default function Home() {
                             >
                               <Link to={`/onemovies/${product.id}`} className='text-decoration-none'>
                                   <Cards
-                                   movieIMG={`https://image.tmdb.org/t/p/w500${product.poster_path}`}
+                                   movieIMG={`${Base_http}${product.poster_path}`}
                                    moviename={product.title}
                                    movieDate={product.release_date}
                                   />
@@ -324,7 +326,7 @@ export default function Home() {
                             >
                               <Link to={`/onemovies/${product.id}`} className='text-decoration-none'>
                                   <Cards
-                                   movieIMG={`https://image.tmdb.org/t/p/w500${product.poster_path}`}
+                                   movieIMG={`${Base_http}${product.poster_path}`}
                                    moviename={product.title}
                                    movieDate={product.release_date}
                                   />

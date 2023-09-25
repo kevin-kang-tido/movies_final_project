@@ -20,9 +20,9 @@ export default function Navbar() {
   return (
     <div className="position-sticky top-0 z-1">
     <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 nav_css">
-      <a href="/" className="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+      <NavLink to="/" className="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
         <img className='mx-5' src={myimage} alt="" style={{width:"5rem"}}/>
-      </a>
+      </NavLink>
       <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
         <li className="nav-item dropdown">
           <a className="nav-link text-white link-secondary font-weight-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

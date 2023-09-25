@@ -1,8 +1,14 @@
 import React from 'react'
 import '../utilities/CSS/navbar.css'
+import { useNavigate } from 'react-router-dom'
 
 export  function Cards(props) {
-  // <img class="card-img-top rounded-bottom" src="https://i.pinimg.com/474x/f2/aa/de/f2aade44c9f8b434ee4befe2913c0c68.jpg" alt="Card image cap"/>
+  // const navigate = useNavigate()
+  // const onFileClick = (e) => {
+    // onClick={() => navigate("/onemovies")
+  //   console.log("Show me the target e:",e.target)
+  // }
+  
   return (
     <>
       <div className="card">

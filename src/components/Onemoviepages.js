@@ -1,8 +1,38 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../utilities/CSS/onemoviespage.css'
 import { Cardactor } from './Cards'
+import { Base_http } from '../utilities/Base_http';
+import { NavLink } from 'react-router-dom';
+import Trailer from './Trailer';
 
-export default function Onemoviepages() {
+export default function Onemoviepages(props) {
+  const oneMovieData  = {
+    title: 'Default Title',
+    release_date: 'Unknown',
+    runtime: 0,
+    overview: 'Overview Null',
+    vote_average: 0,
+    // poster_path:''
+    poster_path: '/kMI3tgxLAZbzGOVlorUBva0kriS.jpg',
+    // poster_path: [
+    //   "https://www.pulsecarshalton.co.uk/wp-content/uploads/2016/08/jk-placeholder-image.jpg"
+    // ]
+
+}
+
+ const [movies, setMovies] = useState(oneMovieData);
+
+ 
+
+ // get data from all  card
+ useEffect( () => {
+
+                
+
+ },[])
+
+
+
   return (
 <>
     {/* // start menu */}
@@ -81,23 +111,25 @@ export default function Onemoviepages() {
     <section className='mt-2 mb-2'>
       <div className='part_card'>
         <div className='div_img'>
-          <img src="https://i.pinimg.com/474x/3a/5b/18/3a5b18b5c64584bf174a6809b4a43b99.jpg" alt="img_movies"/>
+          <img src={`${Base_http}${movies?.poster_path}`} alt="img_movies"/>
         </div>
       </div>
       <div className='part_infor'>
         <div className='div_info d-flex  flex-column align-items-start'>
-          <h1 className='text-white'> The Aladdin <span>(2019)</span></h1>
+          <h1 className='text-white'>${movies?.title} The Aladdin <span>(2019)</span></h1>
           <div className='under_title d-flex'>
             <span>
             <i class="fa-solid fa-clapperboard text-white mx-2"></i>
             </span>
             <span className='text-white'>
-            07/27/2023 (AU)
+              ${movies?.release_date}
+              07/27/2023 (AU)
             </span>
             <span className=''>
             <a href="#">Horror</a>,&nbsp;<a href="#">Thriller </a>
             </span>
             <span className='timemovies text-white'>
+            ${movies?.runtime}
               2h 35m
             </span>
           </div>
@@ -116,10 +148,9 @@ export default function Onemoviepages() {
             <i class="fa-solid fa-list"></i>
             </div>
             <div className='iconn_play mx-2'>
-            <a href="#" className='mx-2'>
-            <i class="fa-solid fa-play"></i>
-              <p>Play Trailer</p>
-            </a>
+            <NavLink to="/trailer" className='mx-2'>
+                   <Trailer/>
+            </NavLink>
             </div>
           </div>
 

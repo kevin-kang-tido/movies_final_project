@@ -53,6 +53,10 @@ export const all_on_tv = (pageNow) =>{
     }
 }
 
+// function for insert movies to card onemoveis
+
+
+
 
 
 
