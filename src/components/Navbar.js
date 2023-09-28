@@ -65,10 +65,12 @@ export default function Navbar() {
             <li><a className="dropdown-item" href="#">API</a></li>
           </ul>
         </li>
-        <li className="">
-          <a className="nav-link text-white link-secondary" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <i className="fa-solid fa-magnifying-glass w-25"></i>
-          </a>
+        {/* role="button" data-bs-toggle="dropdown" aria-expanded="false" */}
+        <li className="search_bar">
+          <NavLink className="nav-link text-white link-secondary" to="/testsearch">
+          <i className="fa-solid fa-magnifying-glass w-25">
+          </i>
+          </NavLink>
         </li>
       </ul>
       <NavLink

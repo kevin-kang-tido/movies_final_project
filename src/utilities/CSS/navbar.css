@@ -236,17 +236,16 @@ a{
 /* end menu movies */
 
 
+
+
 /* start footer style */
 .full_footer{
     font-family: Arial,sans-serif;
    
-   
 }
 .row_footer{
     
-    
     bottom: 0;
-   
 }
 .row_footer h5{
     color: #FCFCFC;
@@ -266,4 +265,89 @@ a{
     color: #4E4D55;
     transform: 0.4s;
 }
+.nav-link{
+    font-family: Arial,sans-serif;
+    font-size:18px;
+    color: #4E4D55;
+}
+.nav-link:hover{
+    color: #FCFCFC;
+}
 /* end footer style */
+
+
+
+
+
+
+
+
+
+/* part for responcsive carousel start */
+
+@media screen and (max-width:990px){
+    .card-text h6{
+        color: #FCFCFC;
+        font-size: 20px;
+    }
+    .card_titile p{
+        font-size: 20px;
+    }
+    .icon_card i{
+        font-size: 20px;
+    }
+
+    .carousel-caption{
+        top: 50px;
+        /* background-color: #743737; */
+    }
+    .carousel-caption h5{
+        font-size: 50px;
+        font-family:Arial, sans-serif ;
+        font-weight: 700;
+    }
+    .carousel-caption p{
+        font-size: 18px;
+        font-family:Arial, sans-serif ;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden; 
+    }
+    .slide_btn button{
+        width: 120px;
+        font-size: 12px;
+    
+    } 
+}
+@media screen and (max-width:767px){
+    .carousel-caption{  
+        z-index: 1;
+        width:200px; 
+        height: 300px;
+        background-color: #743737;
+    }
+    .carousel-caption h5{
+        font-size: 20px;
+        font-family:Arial, sans-serif;
+        font-weight: 700;
+    }
+    .carousel-caption p{
+        font-size: 13px;
+        font-family:Arial, sans-serif ;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden; 
+    }
+    .slide_btn button{
+        width: 120px;
+        font-size: 12px;
+    }
+    
+    
+}
+
+
+/* part for responcsive carousel end */
+

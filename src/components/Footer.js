@@ -1,5 +1,6 @@
 import React from 'react'
 import '../utilities/CSS/navbar.css'
+import { a } from 'react-router-dom'
 
 export default function Footer() {
   return (
@@ -20,11 +21,11 @@ export default function Footer() {
       <div class="col-6 col-md-2 mb-3">
         <h5>QUICK LINK</h5>
         <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Home</a></li>
+          <li class="nav-item mb-2"><a href="/" class="nav-link p-0 text-white">Home</a></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Contact Us</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Popular Movies</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">TVShow</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Actor Popular</a></li>
+          <li class="nav-item mb-2"><a href="/popularmovies" class="nav-link p-0 text-white">Popular Movies</a></li>
+          <li class="nav-item mb-2"><a href="/ontv" class="nav-link p-0 text-white">TVShow</a></li>
+          <li class="nav-item mb-2"><a href="/popularpeople" class="nav-link p-0 text-white">Actor Popular</a></li>
         </ul>
       </div>
 
@@ -48,10 +49,10 @@ export default function Footer() {
             <button class="btn btn-primary" type="button">Subscribe</button>
           </div>
           <ul class="list-unstyled d-flex mt-2 icon_css">
-              <li class="ms-3"><a class="link-secondary mx-2" href="#"><i class="fa-brands fa-instagram"></i></a></li>
-              <li class="ms-3"><a class="link-secondary mx-2" href="#"><i class="fa-brands fa-facebook"></i></a></li>
-              <li class="ms-3"><a class="link-secondary mx-2" href="#"><i class="fa-brands fa-twitter"></i></a></li>
-              <li class="ms-3"><a class="link-secondary mx-2" href="#"><i class="fa-brands fa-github"></i></a></li>
+              <li class="ms-3"><a class="link-secondary mx-2" to='/'><i class="fa-brands fa-instagram"></i></a></li>
+              <li class="ms-3"><a class="link-secondary mx-2" to='/'><i class="fa-brands fa-facebook"></i></a></li>
+              <li class="ms-3"><a class="link-secondary mx-2" to='/'><i class="fa-brands fa-twitter"></i></a></li>
+              <li class="ms-3"><a class="link-secondary mx-2" to='/'><i class="fa-brands fa-github"></i></a></li>
           </ul>
         </form>
       </div>

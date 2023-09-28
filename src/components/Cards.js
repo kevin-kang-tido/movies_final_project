@@ -9,10 +9,16 @@ export  function Cards(props) {
   //   console.log("Show me the target e:",e.target)
   // }
   
+  const handleMovieCardClicked = ()=>{
+       props.onCardClick(props.movie)
+  }
   return (
     <>
       <div className="card">
         <img class="card-img-top rounded-bottom"
+         onClick={
+          handleMovieCardClicked
+         }
          src={props.movieIMG}
           alt="moveis_card"/>
         <div className="card-body">

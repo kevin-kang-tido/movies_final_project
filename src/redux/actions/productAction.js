@@ -53,8 +53,17 @@ export const all_on_tv = (pageNow) =>{
     }
 }
 
-// function for insert movies to card onemoveis
-
+// api searchiing product or movies
+export const all_search_movies = () => {
+    return (dispatch) => {
+        fetch(`https://api.themoviedb.org/3/search/movie?api_key=4113f3ad734e747a5b463cde8c55de42&language=en- US&query=horr`)
+       .then(res => res.json())
+        .then(resp => dispatch({
+            type: actionTypes.FETCH_ALL_SEARCH,
+            payload: resp
+        }))
+    }
+}
 
 
 
