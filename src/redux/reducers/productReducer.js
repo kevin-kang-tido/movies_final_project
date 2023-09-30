@@ -7,6 +7,8 @@ const initialState = {
     tvshows:[],
     ontvs  :[],
     search:[],
+    topRate:[],
+    upcoming:[],
     // filterProduct: [],
     isLoading: true, 
 }
@@ -25,6 +27,12 @@ export const productReducer = (state = initialState, action) => {
         // statement on tv show
         case actionTypes.FETCH_ONTV: 
         return{ ...state, ontvs: payload, isLoading: false}
+        // statement on top rate
+        case actionTypes.FETCH_TOP_RATE: 
+        return{ ...state, topRate: payload, isLoading: false}
+         // statement on upcoming
+         case actionTypes.FETCH_UPCOMING: 
+         return{ ...state, upcoming: payload, isLoading: false}
          // statement for search movies
         case actionTypes.FETCH_ALL_SEARCH: 
         return{ ...state, search: payload}

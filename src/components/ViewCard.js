@@ -1,9 +1,16 @@
 import React from 'react'
+import '../utilities/CSS/navbar.css'
+
+
+
 
 export default function ViewCard(props) {
+    const handleMovieCardClicked = ()=>{
+        props.onCardClick(props.movie)
+   }
   return (
     <div>
-        <div className="card">
+        <div className="card" onClick={handleMovieCardClicked}>
         <img class="card-img-top rounded-bottom"
          src={props.posterIMG}
           alt="moveis_card"/>

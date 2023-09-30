@@ -52,7 +52,30 @@ export const all_on_tv = (pageNow) =>{
         .catch(er => console.log(' Catch tv show  error: ', er))
     }
 }
-
+// Top rate
+export const all_top_rate = (pageNow) =>{
+    return (dispatch) => {
+        fetch(`${base_URL}top_rated?api_key=4113f3ad734e747a5b463cde8c55de42&language=en-US&page=${pageNow}`)
+        .then(res => res.json())
+        .then(resp => dispatch({
+            type: actionTypes.FETCH_TOP_RATE,
+            payload: resp
+        }))
+        .catch(er => console.log(' Catch tv show  error: ', er))
+    }
+}
+// real upcoming
+export const all_upcoming = (pageNow) =>{
+    return (dispatch) => {
+        fetch(`${base_URL}upcoming?api_key=4113f3ad734e747a5b463cde8c55de42&language=en-US&page=${pageNow}`)
+        .then(res => res.json())
+        .then(resp => dispatch({
+            type: actionTypes.FETCH_UPCOMING,
+            payload: resp
+        }))
+        .catch(er => console.log(' Catch tv show  error: ', er))
+    }
+}
 // api searchiing product or movies
 export const all_search_movies = () => {
     return (dispatch) => {

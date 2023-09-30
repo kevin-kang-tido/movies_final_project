@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import '../utilities/CSS/onemoviespage.css'
-import Cards, { Cardactor } from './Cards'
 import { Base_http } from '../utilities/Base_http';
-import { Link, NavLink, useParams } from 'react-router-dom';
+import { Link, NavLink, useLocation, useParams } from 'react-router-dom';
 import Trailer from './Trailer';
 import { base_URL } from '../utilities/constant';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetch_all_products } from '../redux/actions/productAction';
+import Cards from './Cards';
 
 
 export default function Onemoviespages() {
@@ -15,6 +15,7 @@ export default function Onemoviespages() {
   const [movieCard, setMoviesCard] = useState([])
   const [totalPage, setTotalPage] = useState(0)
   const [pageNow, setPageNow] = useState(16)
+  const location = useLocation()
   const [selectedMovie, setSelectedMovie] = useState(
     {
       adult
@@ -34,10 +35,10 @@ export default function Onemoviespages() {
         "en",
       original_title
         :
-        "Venom: Let There Be Carnage",
+        "$Venom: Let There Be Carnage",
       overview
         :
-        "After finding a host body in investigative reporter Eddie Brock, the alien symbiote must face a new enemy, Carnage, the alter ego of serial killer Cletus Kasady.",
+        "Investigative journalist Eddie Brock attempts a comeback following a scandal, but accidentally becomes the host of Venom, a violent, super powerful alien symbiote. Soon, he must rely on his newfound powers to protect the world from a shadowy organization looking for a symbiote of their own..",
       popularity
         :
         96.035,
@@ -49,20 +50,15 @@ export default function Onemoviespages() {
         "2021-09-30",
       title
         :
-        "Venom: Let There Be Carnage",
+        "Venom (2019)",
       video
         :
         false,
       vote_average
         :
-        6.8,
-      vote_count
-        :
-        9176
+        6.8
     }
   )
-
-
 
   useEffect(() => {
     setTotalPage(products.total_pages)
@@ -70,9 +66,6 @@ export default function Onemoviespages() {
       setMoviesCard(products.results)
     else
       setMoviesCard([...movieCard, ...products.results])
-
-
-
 
   }, [products])
 
@@ -88,7 +81,6 @@ export default function Onemoviespages() {
     }
   }
 
-  let { id } = useParams(null);
   const oneMovieData = {
 
     title: 'Default Title',
@@ -103,15 +95,11 @@ export default function Onemoviespages() {
     // ]
 
   }
-
   const [movies, setMovies] = useState(oneMovieData);
   const [open, setOpen] = useState(false);
   const [rated, setRated] = useState(null);
-
-
-
   const handleCardClick = (card) => {
-    console.log("The movies isasdfasfads : ", card)
+    // console.log("The movies Info in card : ", card)
     setSelectedMovie(card)
   }
   const handleOpen = () => {
@@ -128,8 +116,21 @@ export default function Onemoviespages() {
     fetchMovie(id);
   }, []);
 
-  console.log('Show me the movies valuses of movies', movies);
-
+  // console.log('Show me the movies valuses of movies', movies);
+  // search 
+  useEffect(() => {
+    // console.log('Show edit',edit)
+      console.log("show the value of location",location.state)
+     if(selectedMovie != 0){
+        const {title, overview, poster_path, release_date} = location.state
+        //   selectedMovie.id = id
+          selectedMovie.title = title
+          selectedMovie.title = title
+          selectedMovie.overview = overview
+          selectedMovie.release_date = release_date
+          selectedMovie.poster_path= poster_path
+     }
+  },[])
 
   return (
     <>
@@ -214,21 +215,20 @@ export default function Onemoviespages() {
         </div>
         <div className='part_infor'>
           <div className='div_info d-flex  flex-column align-items-start'>
-            <h1 className='text-white'> {selectedMovie?.title}   <span>(2019)</span></h1>
+            <h1 className='text-white'> {selectedMovie?.title}</h1>
             <div className='under_title d-flex'>
               <span>
                 <i class="fa-solid fa-clapperboard text-white mx-2"></i>
               </span>
               <span className='text-white'>
                 ${selectedMovie?.release_date}
-                07/27/2023 (AU)
+                 (AU)
               </span>
               <span className=''>
                 <a href="#">Horror</a>,&nbsp;<a href="#">Thriller </a>
               </span>
               <span className='timemovies text-white'>
-                ${movies?.runtime}
-                2h 35m
+                ${selectedMovie?.runtime}
               </span>
             </div>
 
@@ -253,13 +253,11 @@ export default function Onemoviespages() {
             </div>
 
             <div className='mb-1 mt-2 key_title'>
-              <p>All empires fall.</p>
+              <p>{selectedMovie?.original_title}</p>
             </div>
-
-            <div className='overview d-flex  flex-column align-items-start'>
+            <div className='overview d-flex flex-column align-items-start'>
               <h3>Overview</h3>
-              <p>A kindhearted street urchin named Aladdin embarks on a magical adventure after finding a lamp that releases a wisecracking genie while a power-hungry Grand Vizier vies for the same lamp that has the power to make their deepest wishes come true.
-              </p>
+              <p className=''>{selectedMovie?.overview}</p>
             </div>
           </div>
         </div>

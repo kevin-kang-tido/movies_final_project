@@ -16,7 +16,6 @@ import Upcomingmovies from './pages/Upcomingmovies';
 import Toprated from './pages/Toprated';
 import Airingtoday from './pages/Airingtoday';
 import Ontv from './pages/Ontv';
-import Searchbar from './components/Searchbar';
 import Testsearch from './components/Testsearch';
 
 
@@ -43,7 +42,7 @@ function App() {
           <Route path='/airingtoday'   element={<Airingtoday/>} />
           <Route path='/ontv'          element={<Ontv/>}/>
           {/* tv movies part */}
-          <Route path='/searchbar'     element={<Searchbar/>}/>
+          {/* <Route path='/searchbar'     element={<Searchbar/>}/> */}
           <Route path='/testsearch'    element={<Testsearch/>}/>
 
           <Route path='/*' element={<NotFound/>}/>

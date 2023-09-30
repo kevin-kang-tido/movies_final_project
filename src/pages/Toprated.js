@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../utilities/CSS/popularpage.css'
 import { useDispatch, useSelector} from 'react-redux'
-import { fetch_all_products } from '../redux/actions/productAction'
+import { all_top_rate} from '../redux/actions/productAction'
 import { Link } from 'react-router-dom'
 import Cards from '../components/Cards'
 import Infopart from '../components/Infopart'
@@ -12,26 +12,26 @@ import { Base_http } from '../utilities/Base_http'
 export default function Toprated() {
 
     const dispatch = useDispatch()
-    const {products} = useSelector(state  => state.prodReducer)
+    const {topRate} = useSelector(state  => state.prodReducer)
     const {isLoading} = useSelector(state => state.prodReducer)
     const [movies, setMovies] = useState([])
     const [totalPage, setTotalPage] = useState(0)
-    const [pageNow, setPageNow] = useState(6)
+    const [pageNow, setPageNow] = useState(1)
   
 
 
     useEffect(() => {
-        setTotalPage(products.total_pages)
-        if(pageNow === 6)
-        setMovies(products.results)
+        setTotalPage(topRate.total_pages)
+        if(pageNow === 1)
+        setMovies(topRate.results)
         else
-        setMovies([...movies, ...products.results])
+        setMovies([...movies, ...topRate.results])
         
         
-    },[products])
+    },[topRate])
 
     useEffect(()=>{
-        dispatch(fetch_all_products(pageNow))
+        dispatch(all_top_rate(pageNow))
     },[pageNow])
 
     

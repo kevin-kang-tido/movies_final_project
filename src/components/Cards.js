@@ -3,12 +3,6 @@ import '../utilities/CSS/navbar.css'
 import { useNavigate } from 'react-router-dom'
 
 export  function Cards(props) {
-  // const navigate = useNavigate()
-  // const onFileClick = (e) => {
-    // onClick={() => navigate("/onemovies")
-  //   console.log("Show me the target e:",e.target)
-  // }
-  
   const handleMovieCardClicked = ()=>{
        props.onCardClick(props.movie)
   }

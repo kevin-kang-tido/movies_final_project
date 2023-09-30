@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../utilities/CSS/popularpage.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { all_tv_popular } from '../redux/actions/productAction'
+import { all_upcoming } from '../redux/actions/productAction'
 import { Link } from 'react-router-dom'
 import Cards from '../components/Cards'
 import LoadingView from '../components/LoadingView'
@@ -12,7 +12,7 @@ import Infopart from '../components/Infopart'
 export default function Upcomingmovies() {
 
     const dispatch = useDispatch()
-    const {tvshows} = useSelector(state  => state.prodReducer)
+    const {upcoming} = useSelector(state  => state.prodReducer)
     const {isLoading} = useSelector(state => state.prodReducer)
     const [movies, setMovies] = useState([])
     const [totalPage, setTotalPage] = useState(0)
@@ -21,17 +21,17 @@ export default function Upcomingmovies() {
 
 
     useEffect(() => {
-        setTotalPage(tvshows.total_pages)
+        setTotalPage(upcoming.total_pages)
         if(pageNow === 1)
-        setMovies(tvshows.results)
+        setMovies(upcoming.results)
         else
-        setMovies([...movies, ...tvshows.results])
+        setMovies([...movies, ...upcoming.results])
         
         
-    },[tvshows])
+    },[upcoming])
 
     useEffect(()=>{
-        dispatch(all_tv_popular(pageNow))
+        dispatch(all_upcoming(pageNow))
     },[pageNow])
 
     

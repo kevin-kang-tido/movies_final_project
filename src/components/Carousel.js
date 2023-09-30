@@ -23,7 +23,7 @@ export default function Carousel() {
               </p>
               {/* </div> */}
               <h5>Spider-Man</h5>
-              <p>After being bitten by a genetically altered spider at Oscorp, nerdy but endearing high school student Peter Parker is endowed with amazing powers to become the superhero known as Spider-Man.</p>
+              <p>After being bitten by a genetically altered spider at Oscorp, nerdy but endearing high school student Peter Parker is endowed with amazing powers to become the superhero known as Spider-Man...</p>
               <div className='slide_btn'>
                 <a href="#" className='mx-2'>
                   <button type="button" className="btn btn_play"><i class="fa-solid fa-play"></i>WATCH</button>
@@ -43,7 +43,7 @@ export default function Carousel() {
                 6.5 Season<span>9</span>-Episode-<span>12</span>-Still Gotta Mean Something
               </p>
               <h5>Venom</h5>
-              <p>Investigative journalist Eddie Brock attempts a comeback following a scandal, but accidentally becomes the host of Venom, a violent, super powerful alien symbiote. Soon, he must rely on his newfound powers to protect the world from a shadowy organization looking for a symbiote of their own.</p>
+              <p>Investigative journalist Eddie Brock attempts a comeback following a scandal, but accidentally becomes the host of Venom, a violent, super powerful alien symbiote. Soon, he must rely on his newfound powers to protect ...</p>
               <div className='slide_btn'>
                 <a href="#" className='mx-2'>
                   <button type="button" className="btn btn_play"><i class="fa-solid fa-play"></i>WATCH</button>

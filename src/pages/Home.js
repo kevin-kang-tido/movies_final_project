@@ -8,6 +8,7 @@ import { fetch_all_products, popular_movies } from '../redux/actions/productActi
 import LoadingView from '../components/LoadingView';
 import React, { useEffect, useState } from 'react'
 import { Base_http } from '../utilities/Base_http'
+import ViewCard from '../components/ViewCard';
 
 // state managements times
 
@@ -16,19 +17,23 @@ export default function Home() {
       const dispatch = useDispatch()
       const {isLoading} = useSelector(state => state.prodReducer)
       const {products}= useSelector(state => state.prodReducer)
+      // const [products, setProduct]= useSelector(state => state.prodReducer)
       const {populars}= useSelector(state => state.prodReducer)
       const [pageNow, setPageNow] = useState(2)
-
+      // const [movieSelect,  setMovieSelect] = useState([])
      
       console.log("Here is the product : ", products)
       console.log("Show the  popular   :", populars)
  
       useEffect(() => {
-
          dispatch(fetch_all_products())
          dispatch(popular_movies(pageNow))
-
       }, [])
+
+      const handleCardClick = (card) => {
+         console.log("The movies Selected : ", card)
+         // setProduct(card)
+       }
 
   return (
     <>
@@ -71,12 +76,13 @@ export default function Home() {
                            key={product.id}
                          >
                            <Link to={`/onemovies`} className='text-decoration-none'>
-                               <Cards
-                                movieIMG={`${Base_http}${product.poster_path}`}
-                                moviename={product.title}
-                                movieDate={product.release_date}
-                               />
-                           </Link>
+                                  <ViewCard
+                                  onCardClick={handleCardClick}
+                                   posterIMG={`${Base_http}${product.poster_path}`}
+                                   moviestitle={product.title}
+                                   MovieDate={product.release_date}
+                                  />
+                              </Link>
                         </div>
                 ))
             }
@@ -202,10 +208,10 @@ export default function Home() {
                               key={product.id}
                             >
                               <Link to={`/onemovies/${product.id}`} className='text-decoration-none'>
-                                  <Cards
-                                   movieIMG={`${Base_http}${product.poster_path}`}
-                                   moviename={product.title}
-                                   movieDate={product.release_date}
+                                  <ViewCard
+                                   posterIMG={`${Base_http}${product.poster_path}`}
+                                   moviestitle={product.title}
+                                   MovieDate={product.release_date}
                                   />
                               </Link>
                            </div>
@@ -226,8 +232,8 @@ export default function Home() {
                               <i class="fa-solid fa-star"></i>
                               6.5 Season<span>9</span>-Episode-<span>12</span>-Still Gotta Mean Something
                               </p>
-                              <h5>Spider-Man</h5>
-                              <p>After being bitten by a genetically altered spider at Oscorp, nerdy but endearing high school student Peter Parker is endowed with amazing powers to become the superhero known as Spider-Man.</p>
+                              <h5>Shark(2015)</h5>
+                              <p>Documentary series from the BBC Natural History Unit which explores the ocean's greatest predators. Narrated by actor Paul McGann, the series features...</p>
                               <div className='slide_btn'> 
                               <a href="#" className='mx-2'>
                                     <button type="button" className="btn btn_play"><i class="fa-solid fa-play"></i>WATCH</button>
@@ -246,8 +252,8 @@ export default function Home() {
                               <i class="fa-solid fa-star"></i>
                               6.5 Season<span>9</span>-Episode-<span>12</span>-Still Gotta Mean Something
                               </p>
-                              <h5>Spider-Man</h5>
-                              <p>After being bitten by a genetically altered spider at Oscorp, nerdy but endearing high school student Peter Parker is endowed with amazing powers to become the superhero known as Spider-Man.</p>
+                              <h5>Iron Man</h5>
+                              <p>Iron Man and Captain America battle to keep the Red Skull and his triggerman, Taskmaster, from unleashing an army of Hydra Brutes on the...</p>
                               <div className='slide_btn'> 
                               <a href="#" className='mx-2'>
                                     <button type="button" className="btn btn_play"><i class="fa-solid fa-play"></i>WATCH</button>
@@ -266,7 +272,7 @@ export default function Home() {
                               <i class="fa-solid fa-star"></i>
                               6.5 Season<span>9</span>-Episode-<span>12</span>-Still Gotta Mean Something
                               </p>
-                              <h5>Spider-Man</h5>
+                              <h5>Civil War</h5>
                               <p>After being bitten by a genetically altered spider at Oscorp, nerdy but endearing high school student Peter Parker is endowed with amazing powers to become the superhero known as Spider-Man.</p>
                               <div className='slide_btn'> 
                               <a href="#" className='mx-2'>
@@ -324,7 +330,7 @@ export default function Home() {
                               className='col-12 col-md-4 col-lg-2'
                               key={product.id}
                             >
-                              <Link to={`/onemovies/${product.id}`} className='text-decoration-none'>
+                              <Link to={`/onemovies`} className='text-decoration-none'>
                                   <Cards
                                    movieIMG={`${Base_http}${product.poster_path}`}
                                    moviename={product.title}

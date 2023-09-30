@@ -118,6 +118,14 @@ body{
     float: left;
     font-family: Arial, sans-serif ;
 }
+.overview p{
+    font-family:Arial, sans-serif ;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden; 
+
+}
 
 .actor_part h2{
     font-weight: 500;
