@@ -25,10 +25,10 @@ export default function Carousel() {
               <h5>Spider-Man</h5>
               <p>After being bitten by a genetically altered spider at Oscorp, nerdy but endearing high school student Peter Parker is endowed with amazing powers to become the superhero known as Spider-Man...</p>
               <div className='slide_btn'>
-                <a href="#" className='mx-2'>
+                <a href="/testsearch" className='mx-2'>
                   <button type="button" className="btn btn_play"><i class="fa-solid fa-play"></i>WATCH</button>
                 </a>
-                <a href="#" className='mx-2'>
+                <a href="/testsearch" className='mx-2'>
                   <button type="button" className="btn btn_add"><i class="fa-solid fa-plus"></i>ADD LIST</button>
                 </a>
               </div>
@@ -45,10 +45,10 @@ export default function Carousel() {
               <h5>Venom</h5>
               <p>Investigative journalist Eddie Brock attempts a comeback following a scandal, but accidentally becomes the host of Venom, a violent, super powerful alien symbiote. Soon, he must rely on his newfound powers to protect ...</p>
               <div className='slide_btn'>
-                <a href="#" className='mx-2'>
+                <a href="/testsearch" className='mx-2'>
                   <button type="button" className="btn btn_play"><i class="fa-solid fa-play"></i>WATCH</button>
                 </a>
-                <a href="#" className='mx-2'>
+                <a href="/testsearch" className='mx-2'>
                   <button type="button" className="btn btn_add"><i class="fa-solid fa-plus"></i>ADD LIST</button>
                 </a>
               </div>
@@ -65,10 +65,10 @@ export default function Carousel() {
               <h5>Batman</h5>
               <p>As new villains overrun Gotham City of the future, the aging Bruce Wayne hangs up the cape of the once invincible Batman. But when troubled teenager Terry McGinnis stumbles upon the Dark Knight's secret...</p>
               <div className='slide_btn'>
-                <a href="#" className='mx-2'>
+                <a href="/testsearch" className='mx-2'>
                   <button type="button" className="btn btn_play"><i class="fa-solid fa-play"></i>WATCH</button>
                 </a>
-                <a href="#" className='mx-2'>
+                <a href="/testsearch" className='mx-2'>
                   <button type="button" className="btn btn_add"><i class="fa-solid fa-plus"></i>ADD LIST</button>
                 </a>
               </div>

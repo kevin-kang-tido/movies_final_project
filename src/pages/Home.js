@@ -34,7 +34,6 @@ export default function Home() {
          console.log("The movies Selected : ", card)
          // setProduct(card)
        }
-
   return (
     <>
     <Carousel/>
@@ -47,19 +46,19 @@ export default function Home() {
                   </a>
                   <ul class="nav mx-5">
                         <li class="nav-item mx-5 li_hover">
-                         <a href="#" class="nav-link" aria-current="page">
+                         <Link to="/popularmovies" class="nav-link" aria-current="page">
                            <i class="fa-solid fa-fire mx-2"></i>
                               Popular
-                           </a>
+                           </Link>
                          </li>
-                        <li class="nav-item mx-5 li_hover"><a href="#" class="nav-link">
+                        <li class="nav-item mx-5 li_hover"><Link to="/upcoming" class="nav-link">
                         <i class="fa-solid fa-star mx-2"></i>
                         Premeieres
-                        </a></li>
-                        <li class="nav-item mx-5 li_hover"><a href="#" class="nav-link">
+                        </Link></li>
+                        <li class="nav-item mx-5 li_hover"><Link to="/toprated" class="nav-link">
                         <i class="fa-solid fa-plus mx-2"></i>
                         Recently Added
-                        </a></li>
+                        </Link></li>
                  </ul>
            </div>
     </section>
@@ -154,16 +153,16 @@ export default function Home() {
                   </a>
                   <ul class="nav mx-5">
                         <li class="nav-item mx-5 li_hover">
-                         <a href="#" class="nav-link" aria-current="page">
+                         <a href="/popularmovies" class="nav-link" aria-current="page">
                            <i class="fa-solid fa-fire mx-2"></i>
                               Popular
                            </a>
                          </li>
-                        <li class="nav-item mx-5 li_hover"><a href="#" class="nav-link">
+                        <li class="nav-item mx-5 li_hover"><a href="/populartv" class="nav-link">
                         <i class="fa-solid fa-star mx-2"></i>
                         Premeieres
                         </a></li>
-                        <li class="nav-item mx-5 li_hover"><a href="#" class="nav-link">
+                        <li class="nav-item mx-5 li_hover"><a href="/upcoming" class="nav-link">
                         <i class="fa-solid fa-plus mx-2"></i>
                         Recently Added
                         </a></li>
@@ -235,10 +234,10 @@ export default function Home() {
                               <h5>Shark(2015)</h5>
                               <p>Documentary series from the BBC Natural History Unit which explores the ocean's greatest predators. Narrated by actor Paul McGann, the series features...</p>
                               <div className='slide_btn'> 
-                              <a href="#" className='mx-2'>
+                              <a href="/testsearch" className='mx-2'>
                                     <button type="button" className="btn btn_play"><i class="fa-solid fa-play"></i>WATCH</button>
                               </a>
-                              <a href="#" className='mx-2'>
+                              <a href="/testsearch" className='mx-2'>
                                     <button type="button" className="btn btn_add"><i class="fa-solid fa-plus"></i>ADD LIST</button>
                               </a>
                         </div>
@@ -255,10 +254,10 @@ export default function Home() {
                               <h5>Iron Man</h5>
                               <p>Iron Man and Captain America battle to keep the Red Skull and his triggerman, Taskmaster, from unleashing an army of Hydra Brutes on the...</p>
                               <div className='slide_btn'> 
-                              <a href="#" className='mx-2'>
+                              <a href="/testsearch" className='mx-2'>
                                     <button type="button" className="btn btn_play"><i class="fa-solid fa-play"></i>WATCH</button>
                               </a>
-                              <a href="#" className='mx-2'>
+                              <a href="/testsearch" className='mx-2'>
                                     <button type="button" className="btn btn_add"><i class="fa-solid fa-plus"></i>ADD LIST</button>
                               </a>
                         </div>
@@ -275,10 +274,10 @@ export default function Home() {
                               <h5>Civil War</h5>
                               <p>After being bitten by a genetically altered spider at Oscorp, nerdy but endearing high school student Peter Parker is endowed with amazing powers to become the superhero known as Spider-Man.</p>
                               <div className='slide_btn'> 
-                              <a href="#" className='mx-2'>
+                              <a href="/testsearch" className='mx-2'>
                                     <button type="button" className="btn btn_play"><i class="fa-solid fa-play"></i>WATCH</button>
                               </a>
-                              <a href="#" className='mx-2'>
+                              <a href="/testsearch" className='mx-2'>
                                     <button type="button" className="btn btn_add"><i class="fa-solid fa-plus"></i>ADD LIST</button>
                               </a>
                         </div>
