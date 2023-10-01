@@ -16,6 +16,7 @@ export default function Onemoviespages() {
   const [totalPage, setTotalPage] = useState(0)
   const [pageNow, setPageNow] = useState(16)
   const location = useLocation()
+
   const [selectedMovie, setSelectedMovie] = useState(
     {
       adult
@@ -98,10 +99,15 @@ export default function Onemoviespages() {
   const [movies, setMovies] = useState(oneMovieData);
   const [open, setOpen] = useState(false);
   const [rated, setRated] = useState(null);
+
+  const { id } = useParams()
+
   const handleCardClick = (card) => {
     // console.log("The movies Info in card : ", card)
     setSelectedMovie(card)
   }
+  
+
   const handleOpen = () => {
     setOpen(!open);
   };
@@ -116,21 +122,35 @@ export default function Onemoviespages() {
     fetchMovie(id);
   }, []);
 
+
+  // getting the movie from the id in url 
+  const fetchMovie = async () => {
+    const resp = await fetch(`${base_URL}${id}?api_key=4113f3ad734e747a5b463cde8c55de42&language=en-US`);
+    const data = await resp.json();
+    return data
+  };
+
+  useEffect(() => {
+    fetchMovie(id).then((data) => {
+      setSelectedMovie(data)
+    })
+  }, [id])
+
+
   // console.log('Show me the movies valuses of movies', movies);
   // search 
-  useEffect(() => {
-    // console.log('Show edit',edit)
-      console.log("show the value of location",location.state)
-     if(selectedMovie != 0){
-        const {title, overview, poster_path, release_date} = location.state
-        //   selectedMovie.id = id
-          selectedMovie.title = title
-          selectedMovie.title = title
-          selectedMovie.overview = overview
-          selectedMovie.release_date = release_date
-          selectedMovie.poster_path= poster_path
-     }
-  },[])
+  const {search} = useState([])
+  // useEffect(() => {
+  //    if(selectedMovie == search){
+  //       const {id, title, overview, poster_path, release_date} = location.state
+  //         selectedMovie.id = id
+  //         selectedMovie.title = title
+  //         selectedMovie.title = title
+  //         selectedMovie.overview = overview
+  //         selectedMovie.release_date = release_date
+  //         selectedMovie.poster_path= poster_path
+  //    }
+  // },[])
 
   return (
     <>
@@ -273,9 +293,7 @@ export default function Onemoviespages() {
               <div
                 className='col-12 col-sm-3 col-md-3 col-lg-2'
                 key={product.id}
-
               >
-                <Link to={`/onemovies`} className='text-decoration-none'>
                   <div  >
                     <Cards
                       onCardClick={handleCardClick}
@@ -285,8 +303,6 @@ export default function Onemoviespages() {
                       movie={product}
                     />
                   </div>
-
-                </Link>
               </div>
             ))
           }

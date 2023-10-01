@@ -30,10 +30,10 @@ export default function Home() {
          dispatch(popular_movies(pageNow))
       }, [])
 
-      const handleCardClick = (card) => {
-         console.log("The movies Selected : ", card)
-         // setProduct(card)
-       }
+      // const handleCardClick = (card) => {
+      //    console.log("The movies Selected : ", card)
+      //    // setProduct(card)
+      //  }
   return (
     <>
     <Carousel/>
@@ -74,14 +74,13 @@ export default function Home() {
                            className='col-12 col-md-4 col-lg-2'
                            key={product.id}
                          >
-                           <Link to={`/onemovies`} className='text-decoration-none'>
-                                  <ViewCard
-                                  onCardClick={handleCardClick}
-                                   posterIMG={`${Base_http}${product.poster_path}`}
-                                   moviestitle={product.title}
-                                   MovieDate={product.release_date}
-                                  />
-                              </Link>
+                            <Link to={`/onemovies/${product.id}`} className='text-decoration-none'>
+                                <ViewCard
+                                movieIMG={`${Base_http}${product.poster_path}`}
+                                moviename={product.title}
+                                movieDate={product.release_date}
+                                />
+                            </Link>
                         </div>
                 ))
             }
@@ -98,13 +97,13 @@ export default function Home() {
                            className='col-12 col-md-4 col-lg-2'
                            key={product.id}
                          >
-                           <Link to={`/onemovies/${product.id}`} className='text-decoration-none'>
-                               <Cards
+                            <Link to={`/onemovies/${product.id}`} className='text-decoration-none'>
+                                <ViewCard
                                 movieIMG={`${Base_http}${product.poster_path}`}
                                 moviename={product.title}
                                 movieDate={product.release_date}
-                               />
-                           </Link>
+                                />
+                            </Link>
                         </div>
                 ))
             }
@@ -121,12 +120,12 @@ export default function Home() {
                            key={product.id}
                          >
                            <Link to={`/onemovies/${product.id}`} className='text-decoration-none'>
-                               <Cards
+                                <ViewCard
                                 movieIMG={`${Base_http}${product.poster_path}`}
                                 moviename={product.title}
                                 movieDate={product.release_date}
-                               />
-                           </Link>
+                                />
+                            </Link>
                         </div>
                 ))
             }
@@ -206,13 +205,13 @@ export default function Home() {
                               className='col-12 col-md-4 col-lg-2'
                               key={product.id}
                             >
-                              <Link to={`/onemovies/${product.id}`} className='text-decoration-none'>
-                                  <ViewCard
-                                   posterIMG={`${Base_http}${product.poster_path}`}
-                                   moviestitle={product.title}
-                                   MovieDate={product.release_date}
-                                  />
-                              </Link>
+                            <Link to={`/onemovies/${product.id}`} className='text-decoration-none'>
+                                <ViewCard
+                                movieIMG={`${Base_http}${product.poster_path}`}
+                                moviename={product.title}
+                                movieDate={product.release_date}
+                                />
+                            </Link>
                            </div>
                    ))
                   }

@@ -7,6 +7,7 @@ import Cards from '../components/Cards'
 import LoadingView from '../components/LoadingView'
 import { Base_http } from '../utilities/Base_http'
 import Infopart from '../components/Infopart'
+import ViewCard from '../components/ViewCard'
 
 
 export default function Ontv() {
@@ -80,7 +81,7 @@ export default function Ontv() {
                             key={product.id}
                         >
                             <Link to={`/onemovies/${product.id}`} className='text-decoration-none'>
-                                <Cards
+                                <ViewCard
                                 movieIMG={`${Base_http}${product.poster_path}`}
                                 moviename={product.title}
                                 movieDate={product.release_date}

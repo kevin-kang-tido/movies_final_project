@@ -7,6 +7,7 @@ import Cards from '../components/Cards'
 import { Base_http } from '../utilities/Base_http'
 import Infopart from '../components/Infopart'
 import LoadingView from '../components/LoadingView'
+import ViewCard from '../components/ViewCard'
 
 
 export default function PopularTVshow() {
@@ -78,8 +79,8 @@ export default function PopularTVshow() {
                             className='col-12 col-md-4 col-lg-3'
                             key={product.id}
                         >
-                            <Link to={`/onemovies/${product.id}`} className='text-decoration-none'>
-                                <Cards
+                           <Link to={`/onemovies/${product.id}`} className='text-decoration-none'>
+                                <ViewCard
                                 movieIMG={`${Base_http}${product.poster_path}`}
                                 moviename={product.title}
                                 movieDate={product.release_date}

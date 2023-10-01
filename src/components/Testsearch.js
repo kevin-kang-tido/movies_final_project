@@ -32,15 +32,15 @@ export default function Testsearch() {
             name: 'Action',
             selector: row =><button
              type='button'
-             // navigate move to next slide ,{move with something}
-             onClick={() => navigate("/onemovies",{
+             // navigate
+             onClick={() => navigate(`/onemovies/${row.id}`,{
                 state: row
              })}
               className='btn btn-danger'
             >Watch Now</button>
         }
     ];
-
+     
     useEffect(()=>{
         searchProduct(search)
         .then(resp => setFilterProduct(resp))
@@ -50,7 +50,6 @@ export default function Testsearch() {
 <div className='container'>
         <DataTable
         columns={columns}
-        // data={filterProduct}
         data={filterProduct?.results}
         pagination
         subHeader

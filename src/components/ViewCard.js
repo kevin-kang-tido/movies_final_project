@@ -4,19 +4,19 @@ import '../utilities/CSS/navbar.css'
 
 
 
-export default function ViewCard(props) {
-
+export default function ViewCard({movieIMG, moviename, movieDate}) {
+ 
   return (
     <div>
-        <div className="card">
+        <div className="card"  >
         <img class="card-img-top rounded-bottom"
-         src={props.posterIMG}
+         src={movieIMG}
           alt="moveis_card"/>
         <div className="card-body">
           <div className="card-text">
-            <h6>{props.moviestitle}</h6>
+            <h6>{ moviename}</h6>
           <div className='card_titile'>
-            <p>{props.MovieDate}</p>
+            <p>{movieDate}</p>
             <div className="icon_card">
                 <i className="fa-solid fa-heart mx-2"></i>
                 <i className="fa-solid fa-eye mx-2"></i>

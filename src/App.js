@@ -29,7 +29,8 @@ function App() {
           <Route path='/' element={<Home/>}/>
           <Route path='/popular' element={<Popularpage/>}/>
          
-          <Route path='/onemovies' element={<Onemoviepages/>}/>
+          <Route path='/onemovies/:id' element={<Onemoviepages/>}/>
+          {/* <Route path='/onemovies' element={<Onemoviepages/>}/> */}
           <Route path='/popularpeople' element={<Popularpeople/>}/>
           {/* papges popular movies */}
           <Route path='/popularmovies' element={<Popularmovies/>}/>
@@ -43,7 +44,7 @@ function App() {
           <Route path='/ontv'          element={<Ontv/>}/>
           {/* tv movies part */}
           {/* <Route path='/searchbar'     element={<Searchbar/>}/> */}
-          <Route path='/testsearch'    element={<Testsearch/>}/>
+          <Route path='/testsearch'    element={<Testsearch search={true}/>}/>
 
           <Route path='/*' element={<NotFound/>}/>
           
