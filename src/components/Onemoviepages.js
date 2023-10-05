@@ -267,7 +267,8 @@ export default function Onemoviespages() {
               </div>
               <div className='iconn_play mx-2'>
                 <NavLink to="/trailer" className='mx-2'>
-                  <Trailer />
+                   <i class="fa-solid fa-play"></i>
+                   <p>Play Trailer</p>
                 </NavLink>
               </div>
             </div>

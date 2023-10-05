@@ -7,12 +7,10 @@ import { base_URL } from '../utilities/constant';
 const Trailer = () => {
     const [TrailerMovie, setTrailerMovie] = useState(null);
     const [modalIsOpen, setModalIsOpen] = useState(false);
-    // const [id, setID]= useState("64e398a6076ce843b9b11894")
     let { id } = useParams(null);
     useEffect(() => {
         const fetchTrailerMovies = async () => {
             try {
-                // const response = await fetch(`https://api.themoviedb.org/3/movie/64e398a6076ce843b9b11894/videos?api_key=4113f3ad734e747a5b463cde8c55de42&language=en-US`);
                 const response = await fetch(`${base_URL}${id}/videos?api_key=4113f3ad734e747a5b463cde8c55de42&language=en-US`);
                 const data = await response.json();
                 setTrailerMovie(data);
@@ -49,8 +47,8 @@ const Trailer = () => {
             <div
                 onClick={handleOpenModal}
             >
-              <i class="fa-solid fa-play"></i>
-              <p>Play Trailer</p>
+              {/* <i class="fa-solid fa-play"></i>
+              <p>Play Trailer</p> */}
             </div>
         </>
     );

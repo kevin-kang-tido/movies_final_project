@@ -205,7 +205,7 @@ export default function Home() {
                               className='col-12 col-md-4 col-lg-2'
                               key={product.id}
                             >
-                            <Link to={`/onemovies/${product.id}`} className='text-decoration-none'>
+                             <Link to={`/onemovies/${product.id}`} className='text-decoration-none'>
                                 <ViewCard
                                 movieIMG={`${Base_http}${product.poster_path}`}
                                 moviename={product.title}
@@ -328,13 +328,13 @@ export default function Home() {
                               className='col-12 col-md-4 col-lg-2'
                               key={product.id}
                             >
-                              <Link to={`/onemovies`} className='text-decoration-none'>
-                                  <Cards
-                                   movieIMG={`${Base_http}${product.poster_path}`}
-                                   moviename={product.title}
-                                   movieDate={product.release_date}
-                                  />
-                              </Link>
+                              <Link to={`/onemovies/${product.id}`} className='text-decoration-none'>
+                                <ViewCard
+                                movieIMG={`${Base_http}${product.poster_path}`}
+                                moviename={product.title}
+                                movieDate={product.release_date}
+                                />
+                            </Link>
                            </div>
                    ))
                   }

@@ -17,6 +17,7 @@ import Toprated from './pages/Toprated';
 import Airingtoday from './pages/Airingtoday';
 import Ontv from './pages/Ontv';
 import Testsearch from './components/Testsearch';
+import Trailer from './components/Trailer';
 
 
 
@@ -45,7 +46,8 @@ function App() {
           {/* tv movies part */}
           {/* <Route path='/searchbar'     element={<Searchbar/>}/> */}
           <Route path='/testsearch'    element={<Testsearch search={true}/>}/>
-
+           <Route path='/trailer' element={<Trailer/>}/>
+           
           <Route path='/*' element={<NotFound/>}/>
           
         </Route>
